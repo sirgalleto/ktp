@@ -1,0 +1,32 @@
+{
+  "name": "ktp-webclient",
+  "authors": [
+    "Sebastián Osorio <im@svzosorio.co>"
+  ],
+  "description": "ktp web-client to GDLJS",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "keywords": [
+    "KTP",
+    "web",
+    "client"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "angular-material": "~0.11.4",
+    "angular-ui-router": "~0.2.15"
+  }
+}
