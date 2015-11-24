@@ -14,7 +14,7 @@
                     url: `${baseUrl}/${id || ''}`,
                     method: 'get'
                 }).then(function(response){
-                    return response.data;
+                    return response.data.data;
                 });
             },
             create: function(note){
@@ -22,7 +22,7 @@
                     url: baseUrl,
                     method: 'post'
                 }).then(function(response){
-                    return response.data;
+                    return response.data.data;
                 });
             }
         }
