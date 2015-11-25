@@ -13,15 +13,26 @@
         };
 
         $scope.addNote = function(note){
-            Notes.create(note).then(function(){
+            console.log(note);
+            if(note && (note.description || note.url)){
+                Notes.create(note).then(function(){
+                    $mdToast.show(
+                        $mdToast.simple()
+                        .content('Success')
+                        .position('top right')
+                        .hideDelay(3000)
+                    );
+                    $mdDialog.hide();
+                });
+            }
+            else{
                 $mdToast.show(
                     $mdToast.simple()
-                    .content('Success')
+                    .content('Description or url its required')
                     .position('top right')
                     .hideDelay(3000)
                 );
-                $mdDialog.hide();
-            });
+            }
         };
     }
 })()
