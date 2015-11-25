@@ -23,19 +23,19 @@
                 templateUrl: 'views/add-note.tpl.html',
                 parent: angular.element(document.body),
                 targetEvent: $event,
-                clickOutsideToClose: true
-            })
-            .then(function(answer) {
+                clickOutsideToClose: true,
+                onComplete: construct
+            }).then(function(data){
                 construct();
-            }, function() {
-
+            }, function(){
+                construct();
             });
+
         };
 
         function construct() {
             Notes.get().then(function(data){
-                console.log(data);
-                vm.notes = data;
+                vm.notes = data.reverse();
             });
         }
     }
