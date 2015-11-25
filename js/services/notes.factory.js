@@ -25,6 +25,14 @@
                 }).then(function(response){
                     return response.data.data;
                 });
+            },
+            delete: function(id){
+                return $http({
+                    url: `${baseUrl}/${id || ''}`,
+                    method: 'delete'
+                }).then(function(response){
+                    return response.data.data;
+                });
             }
         }
     }
