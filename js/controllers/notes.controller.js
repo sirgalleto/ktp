@@ -36,6 +36,15 @@
         function construct() {
             Notes.get().then(function(data){
                 vm.notes = data.reverse();
+                //removeAll(vm.notes);
+            });
+        }
+
+        function removeAll(notes) {
+            notes.forEach(function(data){
+                Notes.delete(data._id).then(function(){
+                    console.log(data._id);
+                });
             });
         }
     }
