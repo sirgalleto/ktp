@@ -20,7 +20,16 @@
             create: function(note){
                 return $http({
                     url: baseUrl,
-                    method: 'post'
+                    method: 'post',
+                    data: note
+                }).then(function(response){
+                    return response.data.data;
+                });
+            },
+            delete: function(id){
+                return $http({
+                    url: `${baseUrl}/${id || ''}`,
+                    method: 'delete'
                 }).then(function(response){
                     return response.data.data;
                 });

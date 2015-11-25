@@ -1,15 +1,32 @@
-<md-toolbar layout="row">
+<md-toolbar>
     <div class="md-toolbar-tools">
-        <h1>Keep This Please</h1>
+        <h2>
+            <span>Keep This Please</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Github" href="http://github.com/svzosorio/ktp" target="_blank">
+            <md-icon md-svg-icon="img/icons/github-circle.svg"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Compartir" ng-click="vm.share($event)">
+            <md-icon md-svg-icon="img/icons/share-variant.svg"></md-icon>
+        </md-button>
     </div>
 </md-toolbar>
 <md-content>
-    <md-card>
+    <md-card ng-repeat="item in vm.notes">
         <md-card-content>
-            <h2 class="md-title">Title</h2>
+            <h2 class="md-title">{{item.title}}</h2>
             <p>
-                Description
+                {{item.description}}
             </p>
         </md-card-content>
+        <md-card-actions layout="row" layout-align="end center" ng-show="item.url">
+            <md-button href="{{item.url}}" target="_blank" aria-label="link">
+                <md-icon md-svg-icon="img/icons/link.svg"></md-icon>
+            </md-button>
+        </md-card-actions>
     </md-card>
 </md-content>
+<md-button class="md-fab md-warn" aria-label="Add" style="position: fixed; bottom: 8px; right: 10px;" ng-click="vm.addNote($event)">
+    <md-icon md-svg-src="img/icons/plus.svg"></md-icon>
+</md-button>

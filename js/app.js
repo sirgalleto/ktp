@@ -9,7 +9,8 @@
     function config($stateProvider, $mdThemingProvider) {
 
         $mdThemingProvider.theme('default')
-        .primaryPalette('blue');
+        .primaryPalette('blue')
+        .accentPalette('red');
 
         $stateProvider
         .state('home', {
