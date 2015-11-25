@@ -20,7 +20,8 @@
             create: function(note){
                 return $http({
                     url: baseUrl,
-                    method: 'post'
+                    method: 'post',
+                    data: note
                 }).then(function(response){
                     return response.data.data;
                 });
